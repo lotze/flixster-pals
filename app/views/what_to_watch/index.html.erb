@@ -1,0 +1,3 @@
+<p>Flixster-pals accesses your "want to see" data from <a href="https://www.flixster.com/">Flixster</a> in order to figure out what you want to watch. You'll need to know your user id number, which you can get by visiting your profile page, and the user ids for anyone else you are trying to combine preferences with. Enter those below (comma-separated), and select whether you're looking for a dvd, theater, or upcoming movie to watch! You'll get the top movies you have in common.</p>
+
+<%= render 'what_to_watch/form', user_ids: @user_ids, movie_format: @movie_format %>

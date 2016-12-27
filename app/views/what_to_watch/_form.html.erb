@@ -1,0 +1,5 @@
+<%= form_tag what_to_watch_path do %>
+    <%= select_tag :format, options_for_select([ "dvd", "theater", "upcoming" ], movie_format || "dvd") %>
+    <br /><%= text_field_tag :user_ids, user_ids %>
+    <br /><%= submit_tag 'Submit' %>
+<% end %>

@@ -1,0 +1,18 @@
+<p><%= render 'what_to_watch/form', user_ids: @user_ids, movie_format: @movie_format %></p>
+
+<p>Individual best:
+<% @best.each do |user, best_movies| %>
+    <br /><strong><%= user.name %></strong>
+    <% best_movies.each do |movie| %>
+      <br /><a href="https://rottentomatoes.com/m/<%= movie.id %>"><%= movie.title %></a>: <%= movie.tomatometer %>% on rotten tomatoes
+    <% end %>
+<% end %>
+</p>
+
+<% if @best_common.present? %>
+  <p>Common best:
+  <% @best_common.each do |movie| %>
+    <br /><a href="https://rottentomatoes.com/m/<%= movie.id %>"><%= movie.title %></a>: <%= movie.tomatometer %>% on rotten tomatoes
+  <% end %>
+  </p>
+<% end %>
